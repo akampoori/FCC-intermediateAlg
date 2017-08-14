@@ -1,0 +1,38 @@
+/* Diff Two Arrays
+Compare two arrays and return a new array with any items only found
+in one of the two given arrays, but not both.
+In other words, return the symmetric difference of the two arrays.
+
+Remember to use Read-Search-Ask if you get stuck. Try to pair program.
+Write your own code.
+
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  // Same, same; but different.
+  return newArr;
+}
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+
+Here are some helpful links:
+
+Comparison Operators
+Array.prototype.slice()
+Array.prototype.filter()
+Array.prototype.indexOf()
+Array.prototype.concat()
+*/
+
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  // Same, same; but different.
+
+ newArr = arr1.filter(function (el) {
+   return arr2.indexOf(el) === -1; })
+              .concat(arr2.filter(function(val) {
+               return arr1.indexOf(val) === -1; })
+                     );
+
+  return newArr;
+}
+
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
